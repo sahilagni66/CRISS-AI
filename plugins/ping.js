@@ -32,14 +32,9 @@ async (conn, mek, m, { from, quoted, sender, reply, }) => {
         const end = new Date().getTime();
         const responseTime = (end - start) / 1000;
 
-        const text = `> *CRISS-AI SPEED: ${responseTime.toFixed(2)}ms ${reactionEmoji}*`;
+        const text = `> *CRISS-AI SPEED: ${responseTime.toFixed(2)}ms ${reactionEmoji}*`
 
-        await conn.sendMessage(from, {
-            text,
-            contextInfo:
-        }, { quoted: mek });
-
-    } catch (e) {
+          } catch (e) {
         console.error("Error in ping command:", e);
         reply(`An error occurred: ${e.message}`);
     }
