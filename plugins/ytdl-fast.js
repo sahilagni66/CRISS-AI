@@ -80,7 +80,7 @@ cmd({
         if (!q) return reply("Please provide a song name or YouTube link.");
 
         // Fast reply: searching for song (do NOT await so it replies instantly)
-        conn.sendMessage(from, { text: "🔍 ᴄʀɪss ᴀɪ is searching for your song..." }, { quoted: mek });
+        conn.sendMessage(from, { text: "🔍  𝐒ⱺ𐓣𝗀 𝐒𝖾α𝗋𝖼ɦ 𝐊α𝗋 𝐑αɦα 𝐇υ..." }, { quoted: mek });
 
         const yt = await ytsearch(q);
         if (!yt.results.length) return reply("No results found!");
@@ -97,7 +97,7 @@ cmd({
         let imgUrl = song.thumbnail || "https://i.ibb.co/7yz1C9S/music-note.png"; // fallback image
         await conn.sendMessage(from, {
             image: { url: imgUrl },
-            caption: `🎵 *${song.title}*\n\n✅ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʀɪss ᴠᴇᴠᴏ`
+            caption: `🎵 *${song.title}*\n\n🌟 𝐅𝖾ᥣ𝗂𝗑 `
         }, { quoted: mek });
 
         // 2. Send audio with forwarding context
