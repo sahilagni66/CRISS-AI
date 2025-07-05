@@ -95,37 +95,10 @@ cmd({
 
         // 1. Send image (thumbnail) with song title and powered by text, with forwarding context
         let imgUrl = song.thumbnail || "https://i.ibb.co/7yz1C9S/music-note.png"; // fallback image
-        await conn.sendMessage(from, {
-            image: { url: imgUrl },
-            caption: `🎵 *${song.title}*\n\n✅ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʀɪss ᴠᴇᴠᴏ`,
-            contextInfo: { 
-                mentionedJid: [m.sender],
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363417599637828@newsletter',
-                    newsletterName: 'CRISS AI',
-                    serverMessageId: 143
-                }
-            }
-        }, { quoted: mek });
+        , 
 
         // 2. Send audio with forwarding context
-        await conn.sendMessage(from, {
-            audio: { url: data.result.downloadUrl },
-            mimetype: "audio/mpeg",
-            fileName: `${song.title}.mp3`,
-            contextInfo: { 
-                mentionedJid: [m.sender],
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363417599637828@newsletter',
-                    newsletterName: 'CRISS AI',
-                    serverMessageId: 143
-                }
-            }
-        }, { quoted: mek });
+        
 
     } catch (error) {
         console.error(error);
