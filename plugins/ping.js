@@ -36,16 +36,7 @@ async (conn, mek, m, { from, quoted, sender, reply, }) => {
 
         await conn.sendMessage(from, {
             text,
-            contextInfo: {
-                mentionedJid: [sender],
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363417599637828@newsletter',
-                    newsletterName: "CRISS AI",
-                    serverMessageId: 143
-                }
-            }
+            contextInfo:
         }, { quoted: mek });
 
     } catch (e) {
