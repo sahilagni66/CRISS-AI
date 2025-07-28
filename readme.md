@@ -1,4 +1,3 @@
-
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 
 <p align="center">
@@ -8,7 +7,6 @@
 </p>
 
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
-  </p>
 
 <p align="center">
   <a href="https://github.com/criss-vevo/CRISS-AI/fork">
@@ -37,6 +35,13 @@
     <img title="DEPLOY ON RENDER" src="https://img.shields.io/badge/🚀_DEPLOY_ON_RENDER-000000?style=for-the-badge&logo=render&logoColor=white&color=61DAFB" width="260" height="50"/>
   </a>
 </p>
+
+<p align="center">
+  <a href="https://www.crissvevo.co.tz">
+    <img title="FORK CRISS AI REPO" src="https://img.shields.io/badge/PROMOTE_YOUR_CHANNEL-000000?style=for-the-badge&logo=files&logoColor=white&color=FFA500" width="260" height="50"/>
+  </a>
+  </p>
+
 
 <p align="center">
   <img src="https://i.imgur.com/dBaSKWF.gif" height="40" width="100%">
