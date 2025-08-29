@@ -4,7 +4,7 @@ const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, 
 
 cmd({
     pattern: "tagall",
-    react: "🔊",
+    react: "📑",
     alias: ["gc_tagall"],
     desc: "To Tag all Members",
     category: "group",
@@ -13,13 +13,13 @@ cmd({
 },
 async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupAdmins, prefix, command, args, body }) => {
     try {
-        if (!isGroup) return reply("❌ This command can only be used in groups.");
+        if (!isGroup) return reply("*📛 ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ɪɴ ɢʀᴏᴜᴘs.*");
         
         const botOwner = conn.user.id.split(":")[0]; // Extract bot owner's number
         const senderJid = senderNumber + "@s.whatsapp.net";
 
         if (!groupAdmins.includes(senderJid) && senderNumber !== botOwner) {
-            return reply("❌ Only group admins or the bot owner can use this command.");
+            return reply("*📛 σɴℓʏ gʀσᴜᴘ α∂мιɴs σʀ тнє σωɴєʀ ᴄαɴ ᴜsє тнιѕ ᴄσммαɴ∂.*");
         }
 
         // Ensure group metadata is fetched properly
@@ -30,21 +30,19 @@ async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupAd
         let totalMembers = participants ? participants.length : 0;
         if (totalMembers === 0) return reply("❌ No members found in this group.");
 
-        let emojis = ['📢', '🔊', '🌐', '🔰', '❤‍🩹', '🤍', '🖤', '🩵', '📝', '💗', '🔖', '🪩', '📦', '🎉', '🛡️', '💸', '⏳', '🗿', '🚀', '🎧', '🪀', '⚡', '🚩', '🍁', '🗣️', '👻', '⚠️', '🔥'];
+        let emojis = ['━﹝̣ׄ🩰̸̶ּׄ͜﹞', '🧭ᩨ─', '━ ✦ ⃞🌖', '━ ✦ ⃞🥮ᩧᩙᩪᩩ̶̷  ͟ ͟ ͟ ͟', '━ ✦ ⃞🏴‍☠️‌'];
         let randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 
         // Proper message extraction
         let message = body.slice(body.indexOf(command) + command.length).trim();
-        if (!message) message = "Attention Everyone"; // Default message
+        if (!message) message = "𝐖α𝗄𝖾 𝐔ρ 𝐄𝗏𝖾𝗋𝗒ⱺ𐓣𝖾"; // Default message
 
-        let teks = `▢ Group : *${groupName}*\n▢ Members : *${totalMembers}*\n▢ Message: *${message}*\n\n┌───⊷ *MENTIONS*\n`;
+        let teks = `*𝐆𝗋𖹭ׁ𝗎𝗉: ${groupName}*\n*𝐌𝖾𝗆𝖻𝖾𝗋: ${totalMembers}*\n*𝐌𝖾𝗌𝗌𝖺𝗀𝖾: ${message}*\n\n*(▇▇) 💮 ̸̷̶   ٘ 〔 𝐓𝖺𝗀𝗅𝕚͜𝗌𝗍 〕 ‏‏‎‎╼──╮*\n`;
 
         for (let mem of participants) {
             if (!mem.id) continue; // Prevent undefined errors
-            teks += `${randomEmoji} @${mem.id.split('@')[0]}\n`;
-        }
-
-        teks += "└──✪ CRISS ┃ AI ✪──";
+            teks += `*${randomEmoji}* @${mem.id.split('@')[0]}\n`;
+	}
 
         conn.sendMessage(from, { text: teks, mentions: participants.map(a => a.id) }, { quoted: mek });
 
@@ -52,4 +50,4 @@ async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupAd
         console.error("TagAll Error:", e);
         reply(`❌ *Error Occurred !!*\n\n${e.message || e}`);
     }
-});
+})
